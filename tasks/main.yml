@@ -1,0 +1,26 @@
+---
+# tasks file for nginx
+
+- name: Install nginx apt package
+  apt:
+    name: nginx
+    state: present
+
+- name: Configure website
+  template:
+    src: index.html.jinja
+    dest: /var/www/html/index.html
+
+- name: Configure nginx
+  copy:
+    src: default
+    dest: /etc/nginx/sites-available/default
+  notify:
+  - Reload nginx
+  
+- name: nginx enable service and ensure it is not masked and start
+  systemd:
+    name: nginx
+    enabled: yes
+    masked: no
+    state: started
