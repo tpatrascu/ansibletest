@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euxo pipefail
-
 printf '[defaults]\nroles_path=/test' >ansible.cfg
 ansible-playbook /test/nginx/tests/test.yml -i /test/nginx/tests/inventory
 
