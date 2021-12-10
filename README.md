@@ -8,8 +8,9 @@ Nginx server role
 Role Variables
 --------------
 
-None
-
+```
+nginx_http_listen_port: 8080
+```
 
 
 Testing
@@ -17,4 +18,6 @@ Testing
 
 Requires docker to run tests
 
+```
 ./tests/run_test.sh
+```

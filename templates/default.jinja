@@ -1,6 +1,6 @@
 server {
-        listen 8080 default_server;
-        listen [::]:8080 default_server;
+        listen {{ nginx_http_listen_port }} default_server;
+        listen [::]:{{ nginx_http_listen_port }} default_server;
 
 
         root /var/www/html;

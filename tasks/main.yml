@@ -12,8 +12,8 @@
     dest: /var/www/html/index.html
 
 - name: Configure nginx
-  copy:
-    src: default
+  template:
+    src: default.jinja
     dest: /etc/nginx/sites-available/default
   notify:
   - Reload nginx
